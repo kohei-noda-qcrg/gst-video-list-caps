@@ -9,7 +9,6 @@
 
 namespace {
 declare_autoptr(GstCaps, GstCaps, gst_caps_unref);
-}
 
 auto print_caps(const GstCaps* caps) -> void {
     int num_structures = gst_caps_get_size(caps);
@@ -64,6 +63,7 @@ auto run(int argc, char* argv[]) -> bool {
     gst_element_set_state(pipeline.get(), GST_STATE_NULL);
     return 0;
 }
+} // namespace
 
 auto main(int argc, char* argv[]) -> int {
     return run(argc, argv) ? 0 : 1;
